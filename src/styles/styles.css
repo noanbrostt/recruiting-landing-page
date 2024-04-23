@@ -12,21 +12,11 @@
     --color-primary-4: #486CD9;
     --color-primary-5: #4A6D8C;
     --color-primary-6: #043259;
+    --color-primary-6_25: #04325954;
 
     --color-neutral-0: #fff;
     --color-neutral-1: #1d1d1d;
 }
-/* :root {
-    --color-primary-1: #fff9ea;
-    --color-primary-2: #ffe8b4;
-    --color-primary-3: #f8d477;
-    --color-primary-4: #ffe100;
-    --color-primary-5: #ffcb45;
-    --color-primary-6: #e9a209;
-
-    --color-neutral-0: #fff;
-    --color-neutral-1: #1d1d1d;
-} */
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -53,6 +43,7 @@ section {
     align-items: center;
     justify-content: center;
     background-color: var(--color-primary-6);
+    color: var(--color-neutral-0);
     border-radius: 12px;
     padding: 10px 14px;
     font-weight: 600;
@@ -72,4 +63,30 @@ section {
 
 .section-subtitle {
     font-size: 2.1875rem;
+}
+
+.td-none {
+    text-decoration: none;
+}
+
+input {
+    width: 48%;
+    height: 38px;
+    transition: 300ms;
+    padding: 0 6px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--color-primary-5);
+}
+
+input:focus {
+    border-color: var(--color-primary-6);
+    outline: 0;
+    box-shadow: 0 0 0 .2rem var(--color-primary-6_25);
+}
+
+@media screen and (max-width: 600px) {
+    input {
+        width: 98%;
+    }
 } 

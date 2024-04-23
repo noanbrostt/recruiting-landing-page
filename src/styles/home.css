@@ -1,7 +1,8 @@
 #home {
     display: flex;
-    min-height: calc(100vh - 91px);
+    min-height: 100vh;
     position: relative;
+    margin-top: -91px;
 }
 
 #cta {
@@ -60,24 +61,26 @@
 
 #banner img {
     height: 100%;
-    border-radius: 40% 30% 0% 20%;
+    border-radius: 35% 30% 0% 20%;
 }
 
 .shape {
     background-color: var(--color-primary-2);
-    width: 47%;
-    height: 85%;
+    width: 48%;
+    height: 88%;
     position: absolute;
     border-radius: 40% 30% 0% 20%;
     top: 0;
     right: 0;
     z-index: 1;
+    margin-right: 3.5%;
 }
 
 @media screen and (max-width: 1170px) {
     #home {
         min-height: 100%;
         padding-top: 0px;
+        margin-top: 0px;
     }
 
     #banner,

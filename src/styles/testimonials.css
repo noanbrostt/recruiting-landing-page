@@ -4,11 +4,20 @@
     align-items: center;
     justify-content: center;
     gap: 48px;
+    padding-top: 91px;
+
+    svg {
+        position: absolute;
+        height: 100%;
+        margin-top: -40px;
+    }
 }
 
 #testimonial_chef {
     width: 500px;
     height: auto;
+    border-radius: 0% 0% 17% 60%;
+    filter: drop-shadow(0px 0px 0px black);
 }
 
 #testimonials .section-subtitle {
@@ -63,7 +72,8 @@
         font-size: 2.5rem;
     }
 
-    #testimonial_chef {
+    #testimonial_chef,
+    #testimonials svg {
         display: none;
     }
 
@@ -76,6 +86,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    #testimonials {
+        padding-top: 0px;
+    }
+
     #testimonials .section-subtitle {
         font-size: 2rem;
     }
@@ -86,5 +100,8 @@
 
     .feedback {
         flex-direction: column;
+    }
+    input {
+        width: 98%;
     }
 } 

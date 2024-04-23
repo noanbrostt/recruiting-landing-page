@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding-top: 91px;
 }
 
 #dishes {
@@ -12,6 +13,16 @@
     justify-content: center;
     gap: 24px;
     margin-top: 32px;
+
+    i {
+        font-size: 140px;
+        color: var(--color-primary-5);
+        margin-block: 20px;
+    }
+
+    .dish-title {
+        text-align: center;
+    }
 }
 
 .dish {

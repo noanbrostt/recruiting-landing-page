@@ -1,0 +1,137 @@
+header {
+    width: 100%;
+    height: var(--topbar-height);
+    padding: 22px 8%;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary-1);
+    z-index: 3;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav_logo {
+    font-size: 24px;
+    color: var(--color-primary-6);
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+}
+
+.nav-item.active a {
+    color: var(--color-neutral-1);
+    border-bottom: 3px solid var(--color-primary-4);
+    transition: 200ms;
+}
+
+#mobile-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    display: none;
+    
+    .bar {
+        display: block;
+        width: 28px;
+        height: 3px;
+        border-radius: 3px;
+        background: var(--color-primary-4);
+        margin: 5px auto;
+        transition: all 0.3s;
+        
+        &:nth-child(1),
+        &:nth-child(3) {
+            background: var(--color-primary-6);
+        }
+    }
+}
+
+#mobile-menu {
+    display: none;
+    transition: 300ms;
+    opacity: 0;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--color-primary-1);
+    width: 100vw;
+    height: calc(100vh - var(--topbar-height));
+    position: absolute;
+    top: var(--topbar-height);
+    left: 100vw;
+
+    a {
+        transition: 300ms;
+
+        &:hover {
+            background-color: var(--color-primary-5);
+        }
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    #nav_list,
+    #navbar .btn-default {
+        display: none;
+    }
+
+    #mobile-btn {
+        display: block;
+
+        &.active {
+            .bar:nth-child(1) {
+                transform:  translateY(8px) rotate(45deg);
+            }
+        
+            .bar:nth-child(2) {
+                opacity: 0;
+            }
+        
+            .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+
+    #mobile-menu {
+        
+        &.active {
+            display: flex;
+            opacity: 1;
+            left: 0;
+        }
+
+        .nav-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 33%;
+            font-size: 34px;
+            list-style: none;
+            text-align: center;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        } 
+    }
+}

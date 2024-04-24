@@ -1,8 +1,35 @@
 $(document).ready(function() {
-    $('#mobile_btn').on('click', function () {
-        $('#mobile_menu').toggleClass('active');
-        $('#mobile_btn').find('i').toggleClass('fa-x');
+    // Inicio menu responsivo
+    $('#mobile-btn').on('click', function () {
+        $('#mobile-btn').toggleClass('active');
+        $('#mobile-menu').toggleClass('active');
     });
+  
+    $('#mobile-menu').on('click', function () {
+        $('#mobile-btn').removeClass('active');
+        $('#mobile-menu').removeClass('active');
+    });
+    // Fim menu responsivo
+
+    // Check requisito
+    $('.toggle').on('click', function() {
+        $(this).toggleClass('active');
+        $(this).parent().find('i').toggleClass('color-p5');
+
+        if ($('.toggle').length == $('.toggle.active').length) {
+            // Mostra
+            $('#contratacao_content .section-subtitle').html('Deixe seu nome e whatsapp que entraremos em contato!');
+            $('#contratacao_content .form').css({'display': 'flex'});
+            $('#btn-contratacao').show();
+            $('#btn-checar').hide();
+        } else {
+            // esconde
+            $('#contratacao_content .section-subtitle').html('É preciso possuir todos os requisitos para continuar..');
+            $('#contratacao_content .form').hide();
+            $('#btn-contratacao').hide();
+            $('#btn-checar').show();
+        }
+    })
 
     const sections = $('section');
     const navItems = $('.nav-item');
@@ -40,7 +67,7 @@ $(document).ready(function() {
         distance: '20%'
     });
 
-    ScrollReveal().reveal('.dish', {
+    ScrollReveal().reveal('.card', {
         origin: 'left',
         duration: 2000,
         distance: '20%'
@@ -57,4 +84,8 @@ $(document).ready(function() {
         duration: 1000,
         distance: '20%'
     })
+
+    const dataAtual = new Date();
+    const anoAtual = dataAtual.getFullYear();
+    $('#ano-atual').html(anoAtual);
 });

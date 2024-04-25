@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./src/images/favicon.jpg">
     <title>Plansul Recrutamento</title>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="./src/javascript/jquery-3.7.1.min.js"></script>
+    <script src="./src/javascript/fontawesome.min.js"></script>
+    <script src="./src/javascript/scrollreveal.js"></script>
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
@@ -23,13 +23,18 @@
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
                     <a href="#requisitos">Requisitos</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contratacao">Contratação</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#contato">Contato</a>
+                </li>
             </ul>
-
 
             <div id="mobile-btn">
                 <span class="bar"></span>
@@ -42,10 +47,16 @@
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
                     <a href="#requisitos">Requisitos</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contratacao">Contratação</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contato">Contato</a>
                 </li>
             </ul>
         </nav>
@@ -57,7 +68,7 @@
             <div class="shape"></div>
             <div id="cta">
                 <h1 class="title">
-                    Venha trabalhar <span>aqui</span>
+                    Faça parte do nosso <span>time</span>
                 </h1>
 
                 <p class="description">
@@ -67,6 +78,54 @@
 
             <div id="banner">
                 <img src="src/images/home.png" alt="Home">
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2 class="section-title">Sobre</h2>
+            <h3 class="section-subtitle">Plansul</h3>
+
+            <div id="sobre-content">
+                <div id="sobre-left">
+                    <img src="./src/images/plansul.jpg" alt="Prédio da Plansul Colombo">
+                </div>
+                <div id="sobre-right">
+                    <p>
+                        Faça parte de nossa equipe de atendimento e cresça conosco, temos vagas para 
+                        <b>atendimento ao cliente </b>
+                        com os seguintes benefícios:
+                    </p>
+                    <ol>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Crescimento na Carreira.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Desenvolvimento Contínuo.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Plano de Saúde.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Vale Transporte.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Vale Alimentação.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Premiações.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-square-check"></i>
+                            Flexibilidade de Horários.
+                        </li>
+                    </ol>
+                </div>
             </div>
         </section>
 
@@ -103,7 +162,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <!-- <div class="card">
                     <i class="fa-solid fa-calendar-days"></i>
 
                     <h3 class="card-title">
@@ -115,7 +174,7 @@
                             <div class="check"></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card">
                     <i class="fa-solid fa-location-dot"></i>
@@ -165,8 +224,6 @@
                     <!-- Deixe seu nome e whatsapp que entraremos em contato! -->
                 </h3>
 
-
-
                 <div class="form">
                     <div class="input-section">
                         <label for="input_nome">Nome Completo:
@@ -180,7 +237,6 @@
                     </div>
                 </div>
           
-
                 <a class="btn-default td-none mt-20" href="#requisitos" id="btn-checar">
                     Marcar os requisitos
                 </a>
@@ -189,6 +245,57 @@
                     Enviar meus dados
                 </button>
             </div>
+        </section>
+
+        <section id="contato">
+
+            <h2 class="section-title">Fale Conosco</h2>
+
+            <div class="informacoes">
+                <div class="informacoesLeft">
+                    <div>
+                        <span class="datas">De Segunda à Sábado</span>
+                        <span class="horarios">das 08:00 às 18:00</span>
+                    </div>
+                    <div class="aberto">
+                        Estamos abertos no momento <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="fechado" style="display: none;">
+                        Estamos fechados no momento <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+                <div class="informacoesMiddle"></div>
+                <div class="informacoesRight">
+                    <div class="telefone">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(48) 3271-1313</p>
+                        </div>
+                    </div>
+                    <div class="whats">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>41 99987-0000</p>
+                        </div>
+                        <i class="fa-regular fa-paper-plane" onclick="$('.home-btn')[0].click();"></i>
+                    </div>
+                    <div class="endereco">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Estr. Da Ribeira - Br-476, 3001 - Guarani, Colombo - PR, 83408-460</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe src="https://maps.google.com/maps?q=Plansul+-+Planejamento+e+Consultoria+COLOMBO&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no">
+                </iframe>
+            </div>
+
         </section>
     </main>
 

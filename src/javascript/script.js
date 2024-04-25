@@ -67,23 +67,80 @@ $(document).ready(function() {
         distance: '20%'
     });
 
+    ScrollReveal().reveal('#sobre-right', {
+        origin: 'right',
+        duration: 2000,
+        distance: '20%'
+    });
+
     ScrollReveal().reveal('.card', {
         origin: 'left',
         duration: 2000,
         distance: '20%'
     });
 
-    ScrollReveal().reveal('#testimonial_chef', {
+    ScrollReveal().reveal('#contratacao-img', {
         origin: 'left',
         duration: 1000,
         distance: '20%'
-    })
+    });
+    
+    ScrollReveal().reveal('.informacoesLeft', {
+        origin: 'left',
+        duration: 1000,
+        distance: '20%'
+    });
+
+    ScrollReveal().reveal('.informacoesRight', {
+        origin: 'right',
+        duration: 1000,
+        distance: '20%'
+    });
 
     ScrollReveal().reveal('.feedback', {
         origin: 'right',
         duration: 1000,
         distance: '20%'
-    })
+    });
+
+    // Inicio Check se está no período de funcionamento
+    function estaNoPeriodoDesejado() {
+        const agora = new Date();
+        const diaDaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, 2 = Terça, ..., 6 = Sábado
+        const horaAtual = agora.getHours();
+    
+        // Verifique se hoje é um dia entre segunda-feira (1) e domingo (0)
+        const estaNoPeriodoDias = diaDaSemana >= 1 && diaDaSemana <= 6;
+    
+        // Verifique se a hora atual está entre 8h e 18h
+        const estaNoPeriodoHoras = horaAtual >= 8 && horaAtual <= 17;
+    
+        if (estaNoPeriodoDias && estaNoPeriodoHoras) {
+            $('.aberto').show();
+            $('.fechado').hide();
+            $('.home-btn').attr({'href': 'https://wa.me//5541999946316?text=Olá, estou entrando em contato por conta do anúncio de vaga.', 'target': '_blank', 'onclick': ''});
+        } else {
+            $('.fechado').show();
+            $('.aberto').hide();
+            $('.home-btn').attr({'href': '#contato', 'target': '', 'onclick': 'fechadoPulse()'});
+        }
+    
+        return;
+    }
+    
+    function fechadoPulse() {
+        $('.fechado').addClass('pulse');
+        setTimeout(() => {
+        $('.fechado').removeClass('pulse');
+        }, 3000);
+    }
+    
+    setInterval(() => {
+        estaNoPeriodoDesejado();
+    }, 60*1000);
+    
+    estaNoPeriodoDesejado();
+    // Fim Check
 
     const dataAtual = new Date();
     const anoAtual = dataAtual.getFullYear();

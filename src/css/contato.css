@@ -1,0 +1,157 @@
+#contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 91px;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.pulse {
+    animation: pulse 3s infinite;
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+.map {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.map iframe {
+    width: 90%;
+    height: 340px;
+}
+.telefone,
+.whats,
+.endereco {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.telefone i,
+.whats i,
+.endereco i {
+    font-size: 30px;
+    width: 30px;
+}
+.informacoes {
+    display: flex;
+    gap: 40px;
+    margin-block: 40px 80px;
+}
+.informacoesLeft {
+    width: 50%;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.informacoesLeft > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+.datas {
+    font-size: 26px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+.horarios {
+    font-size: 20px;
+}
+.informacoesMiddle {
+    width: 1px;
+    background: black;
+}
+.informacoesRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.whats i {
+    color: var(--color-primary-8);
+}
+.endereco i {
+    color: #ea4335;
+}
+.aberto,
+.fechado {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+.aberto i,
+.fechado i {
+    font-size: 32px;
+}
+.aberto {
+    color: var(--color-primary-6);
+}
+.fechado {
+    color: var(--darkRed);
+}
+.fa-paper-plane {
+    border: 2px solid var(--color-primary-8);
+    padding: 6px 4px 4px 3px;
+    width: 45px !important;
+    height: 45px;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0px 2px 4px black;
+    cursor: pointer;
+}
+.fa-paper-plane:hover {
+    transform: scale(1.2);
+}
+.destaqueNavItem {
+    transform: scale(1.2);
+    color: var(--color-neutral-0) !important;
+    font-weight: bold !important;
+}
+
+
+@media screen and (max-width: 1170px) {
+
+}
+
+@media screen and (max-width: 600px) {
+    .informacoes {
+        flex-direction: column;
+    }
+    .informacoesLeft {
+        width: 100%;
+        text-align: center;
+    }
+    .informacoesRight {
+        width: 100%;
+    }
+    .horarios {
+        margin-bottom: 20px;
+    }
+    .aberto,
+    .fechado {
+        justify-content: center;
+    }
+    .informacoesMiddle {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+    }
+    .informacoesRight {
+        margin-inline: auto;
+    }
+} 

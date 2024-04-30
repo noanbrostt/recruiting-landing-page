@@ -65,7 +65,7 @@ header {
     display: none;
     transition: 300ms;
     opacity: 0;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-color: var(--color-primary-1);

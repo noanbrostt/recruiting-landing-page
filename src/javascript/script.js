@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $('#input_whats').mask('(00) 00000-0000');
+
     // Inicio menu responsivo
     $('#mobile-btn').on('click', function () {
         $('#mobile-btn').toggleClass('active');
@@ -16,19 +18,19 @@ $(document).ready(function() {
         $(this).toggleClass('active');
         $(this).parent().find('i').toggleClass('color-p5');
 
-        if ($('.toggle').length == $('.toggle.active').length) {
-            // Mostra
-            $('#contratacao_content .section-subtitle').html('Deixe seu nome e whatsapp que entraremos em contato!');
-            $('#contratacao_content .form').css({'display': 'flex'});
-            $('#btn-contratacao').show();
-            $('#btn-checar').hide();
-        } else {
-            // esconde
-            $('#contratacao_content .section-subtitle').html('É preciso possuir todos os requisitos para continuar..');
-            $('#contratacao_content .form').hide();
-            $('#btn-contratacao').hide();
-            $('#btn-checar').show();
-        }
+        // if ($('.toggle').length == $('.toggle.active').length) {
+        //     // Mostra
+        //     $('#contratacao_content .section-subtitle').html('Deixe seu nome e whatsapp que entraremos em contato!');
+        //     $('#contratacao_content .form').css({'display': 'flex'});
+        //     $('#btn-contratacao').show();
+        //     $('#btn-checar').hide();
+        // } else {
+        //     // esconde
+        //     $('#contratacao_content .section-subtitle').html('É preciso possuir todos os requisitos para continuar..');
+        //     $('#contratacao_content .form').hide();
+        //     $('#btn-contratacao').hide();
+        //     $('#btn-checar').show();
+        // }
     })
 
     const sections = $('section');
@@ -49,7 +51,7 @@ $(document).ready(function() {
         sections.each(function(i) {
             const section = $(this);
             const sectionTop = section.offset().top - 96;
-            const sectionBottom = sectionTop+ section.outerHeight();
+            const sectionBottom = sectionTop + section.outerHeight();
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 activeSectionIndex = i;
@@ -65,6 +67,12 @@ $(document).ready(function() {
         origin: 'left',
         duration: 2000,
         distance: '20%'
+    }); 
+
+    $('.card').appear(function() {
+        setTimeout(() => {
+            $(this).find('.toggle').click();
+        }, 1200);
     });
 
     ScrollReveal().reveal('#sobre-right', {

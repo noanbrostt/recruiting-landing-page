@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Input Masks
     var SPMaskBehavior = function (val) {
         return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
     },
@@ -8,6 +9,9 @@ $(document).ready(function() {
         }
     };
 
+    $('#input_nome').keyup(function () { 
+        this.value = this.value.replace(/[^a-zA-Z ]/g,'');
+    });
     $('#input_whats').mask(SPMaskBehavior, spOptions);
 
     // Inicio menu responsivo

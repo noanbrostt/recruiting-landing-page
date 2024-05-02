@@ -129,6 +129,35 @@
     stroke-dashoffset: 0;
     opacity: 1;
 }
+
+#input_nome {
+    text-transform: capitalize;
+}
+
+.btn-documentos {
+    cursor: pointer;
+    color: #2941ef;
+    border-bottom: 2px solid #2941ef;
+}
+
+#calendario {
+    width: clamp(492px, 85vw, 760px);
+    /* height: 380px; */
+    margin-top: 40px;
+    position: relative;
+    overflow-X: auto;
+    overflow-y: hidden;
+    margin-inline: auto;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#contratacao-continuacao {
+    text-align: center;
+}
 /* Fim checkbox */
 
 @media screen and (max-width: 1170px) {
@@ -175,5 +204,9 @@
     }
     .inputGroup {
         width: 98%;
+    }
+    #calendario {
+        width: calc(100% + 50px);
+        margin-inline: -25px;
     }
 } 

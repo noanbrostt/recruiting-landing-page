@@ -101,6 +101,9 @@ section {
 .mt-20 {
     margin-top: 20px;
 }
+.mt-80 {
+    margin-top: 80px;
+}
 
 .color-p5 {
     color: var(--color-primary-5) !important;

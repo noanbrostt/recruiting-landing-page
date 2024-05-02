@@ -229,6 +229,10 @@ $(document).ready(function() {
         });
     }
 
+    $('.btn-documentos').on('click', function() {
+
+    })
+
     const dataAtual = new Date();
     const anoAtual = dataAtual.getFullYear();
     $('#ano-atual').html(anoAtual);

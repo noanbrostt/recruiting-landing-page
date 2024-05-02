@@ -62,7 +62,7 @@ header {
 }
 
 #mobile-menu {
-    display: none;
+    /* display: none; */
     transition: 300ms;
     opacity: 0;
     display: flex;

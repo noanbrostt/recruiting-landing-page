@@ -3,13 +3,25 @@ $(document).ready(function() {
 
     // Inicio menu responsivo
     $('#mobile-btn').on('click', function () {
-        $('#mobile-btn').toggleClass('active');
-        $('#mobile-menu').toggleClass('active');
+        $('#mobile-menu').show();
+        
+        setTimeout(() => {
+            $('#mobile-btn').toggleClass('active');
+            $('#mobile-menu').toggleClass('active');
+        }, 20);
+
+        setTimeout(() => {
+            $('#mobile-menu:not(".active")').hide();
+        }, 300);
     });
   
     $('#mobile-menu').on('click', function () {
         $('#mobile-btn').removeClass('active');
         $('#mobile-menu').removeClass('active');
+
+        setTimeout(() => {
+            $('#mobile-menu:not(".active")').hide();
+        }, 300);
     });
     // Fim menu responsivo
 
@@ -17,20 +29,6 @@ $(document).ready(function() {
     $('.toggle').on('click', function() {
         $(this).toggleClass('active');
         $(this).parent().find('i').toggleClass('color-p5');
-
-        // if ($('.toggle').length == $('.toggle.active').length) {
-        //     // Mostra
-        //     $('#contratacao_content .section-subtitle').html('Deixe seu nome e whatsapp que entraremos em contato!');
-        //     $('#contratacao_content .form').css({'display': 'flex'});
-        //     $('#btn-contratacao').show();
-        //     $('#btn-checar').hide();
-        // } else {
-        //     // esconde
-        //     $('#contratacao_content .section-subtitle').html('É preciso possuir todos os requisitos para continuar..');
-        //     $('#contratacao_content .form').hide();
-        //     $('#btn-contratacao').hide();
-        //     $('#btn-checar').show();
-        // }
     })
 
     const sections = $('section');
@@ -76,7 +74,7 @@ $(document).ready(function() {
     });
 
     ScrollReveal().reveal('#sobre-right', {
-        origin: 'right',
+        origin: 'left',
         duration: 2000,
         distance: '20%'
     });
@@ -100,13 +98,13 @@ $(document).ready(function() {
     });
 
     ScrollReveal().reveal('.informacoesRight', {
-        origin: 'right',
+        origin: 'left',
         duration: 1000,
         distance: '20%'
     });
 
     ScrollReveal().reveal('.feedback', {
-        origin: 'right',
+        origin: 'left',
         duration: 1000,
         distance: '20%'
     });
@@ -126,11 +124,11 @@ $(document).ready(function() {
         if (estaNoPeriodoDias && estaNoPeriodoHoras) {
             $('.aberto').show();
             $('.fechado').hide();
-            $('.home-btn').attr({'href': 'https://wa.me//5541999946316?text=Olá, estou entrando em contato por conta do anúncio de vaga.', 'target': '_blank', 'onclick': ''});
+            $('.fa-paper-plane').parent().show();
         } else {
             $('.fechado').show();
             $('.aberto').hide();
-            $('.home-btn').attr({'href': '#contato', 'target': '', 'onclick': 'fechadoPulse()'});
+            $('.fa-paper-plane').parent().hide();
         }
     
         return;
@@ -149,6 +147,12 @@ $(document).ready(function() {
     
     estaNoPeriodoDesejado();
     // Fim Check
+
+    $('a').on('click', function() {
+        setTimeout(function(){
+            history.replaceState("", document.title, window.location.pathname);
+        }, 1);
+    })
 
     const dataAtual = new Date();
     const anoAtual = dataAtual.getFullYear();

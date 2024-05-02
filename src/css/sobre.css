@@ -29,16 +29,6 @@
             flex-direction: column;
             justify-content: center;
             text-align: justify;
-/* 
-            h2 {
-                font-family: 'Pacifico', cursive;
-                font-style: italic;
-                margin-bottom: 10px;
-            }
-
-            p {
-                margin-block: 10px;
-            } */
 
             ol {
                 list-style: none;

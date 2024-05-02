@@ -1,5 +1,6 @@
 footer {
     background-color: var(--color-primary-6);
+    overflow: hidden;
 }
 
 #footer_items {

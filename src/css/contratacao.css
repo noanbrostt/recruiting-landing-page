@@ -5,20 +5,11 @@
     justify-content: center;
     gap: 48px;
     padding-top: 91px;
-    /* margin-bottom: 72px; */
-
-    #contratacao-svg {
-        position: absolute;
-        height: 15%;
-        margin-left: 60px;
-    }
 }
 
 #contratacao-img {
     width: 500px;
     height: auto;
-    border-radius: 0% 0% 17% 60%;
-    filter: drop-shadow(0px 0px 0px black);
 }
 
 #contratacao .section-subtitle {
@@ -49,26 +40,6 @@
         }
     }
 }
-
-#btn-contratacao {
-    /* display: none; */
-}
-
-/* input {
-    width: 100%;
-    height: 38px;
-    transition: 300ms;
-    padding: 0 6px;
-    font-size: 20px;
-    border-radius: 5px;
-    border: 1px solid var(--color-primary-5);
-
-    &:focus {
-        border-color: var(--color-primary-6);
-        outline: 0;
-        box-shadow: 0 0 0 .2rem var(--color-primary-6_25);
-    }
-} */
 
 .inputGroup {
     font-family: 'Segoe UI', sans-serif;
@@ -170,8 +141,7 @@
         font-size: 2.5rem;
     }
 
-    #contratacao-img,
-    #contratacao-svg {
+    #contratacao-img {
         display: none;
     }
 
@@ -185,7 +155,7 @@
 
 @media screen and (max-width: 600px) {
     #contratacao {
-        padding-top: 0px;
+        padding-top: 46px;
     }
 
     #contratacao .section-subtitle {

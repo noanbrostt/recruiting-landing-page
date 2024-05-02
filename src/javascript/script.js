@@ -1,5 +1,14 @@
 $(document).ready(function() {
-    $('#input_whats').mask('(00) 00000-0000');
+    var SPMaskBehavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    spOptions = {
+    onKeyPress: function(val, e, field, options) {
+        field.mask(SPMaskBehavior.apply({}, arguments), options);
+        }
+    };
+
+    $('#input_whats').mask(SPMaskBehavior, spOptions);
 
     // Inicio menu responsivo
     $('#mobile-btn').on('click', function () {
@@ -67,12 +76,6 @@ $(document).ready(function() {
         distance: '20%'
     }); 
 
-    $('.card').appear(function() {
-        setTimeout(() => {
-            $(this).find('.toggle').click();
-        }, 1200);
-    });
-
     ScrollReveal().reveal('#sobre-right', {
         origin: 'left',
         duration: 2000,
@@ -83,6 +86,12 @@ $(document).ready(function() {
         origin: 'left',
         duration: 2000,
         distance: '20%'
+    });
+
+    $('.card').appear(function() {
+        setTimeout(() => {
+            $(this).find('.toggle').click();
+        }, 1200);
     });
 
     ScrollReveal().reveal('#contratacao-img', {
@@ -134,13 +143,6 @@ $(document).ready(function() {
         return;
     }
     
-    function fechadoPulse() {
-        $('.fechado').addClass('pulse');
-        setTimeout(() => {
-        $('.fechado').removeClass('pulse');
-        }, 3000);
-    }
-    
     setInterval(() => {
         estaNoPeriodoDesejado();
     }, 60*1000);
@@ -153,6 +155,75 @@ $(document).ready(function() {
             history.replaceState("", document.title, window.location.pathname);
         }, 1);
     })
+
+    // Checando se o usuário preencheu todas as informações
+    $('#btn-contratacao').on('click', function() {
+        // Validação inputs
+        if (!$('#check1-61').is(':checked')) {
+            triggerSweetAlert('warning', 'Aceite os Termos e Condições');
+            return;
+        }
+
+        var nome = $('#input_nome').val().trim();
+        if (nome.length == 0) {
+            triggerSweetAlert('warning', 'Informe seu Nome Completo');
+            return;
+        }
+
+        var telefone = $('#input_whats').val().trim();
+        if (telefone.length == 0) {
+            triggerSweetAlert('warning', 'Informe seu Whatsapp');
+            return;
+
+        } else if (telefone.length < 14) {
+            triggerSweetAlert('warning', 'Informe um Whatsapp válido');
+            return;
+        }
+
+        // Caso todos os campos sejam validados
+
+        Swal.fire({
+            title: "Obrigado!",
+            text: "Mandaremos mensagem assim que possível!",
+            icon: "success"
+        });
+
+        $('#check1-61').prop('checked', false);
+        $('#input_nome').val('');
+        $('#input_whats').val('');
+
+        // var link = "https://servicodados.ibge.gov.br/api/v1/pesquisas/" + valor1;
+        // $.ajax({
+        //     url: link,
+        //     type: 'GET',
+        //     dataType: 'json',
+
+        //     })
+        //     .done(function() {
+        //         console.log("success");
+        //         console.log(valor1);
+        //         document.getElementById("demo").innerHTML = valor1;
+        //     })
+        //     .fail(function() {
+        //         console.log("error");
+        //     })
+        //     .always(function() {
+        //         console.log("complete");
+        //     });
+    })
+
+    function triggerSweetAlert(icon, title) {
+        Swal.fire({
+            toast: true,
+            timerProgressBar: true,
+            width: 'fit-content',
+            position: "top-end",
+            icon: icon,
+            title: title,
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
 
     const dataAtual = new Date();
     const anoAtual = dataAtual.getFullYear();

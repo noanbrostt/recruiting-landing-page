@@ -53,7 +53,7 @@ border: 3px solid #ffffff;
 
 html {
     scroll-behavior: smooth;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 body {
@@ -109,10 +109,35 @@ section {
     color: var(--color-primary-5) !important;
 }
 
-/* .scrolled {
-    left: 0 !important;
+.modal ol {
+    list-style-type: none;
+    counter-reset: item;
 }
 
-.d-flex {
-    display: flex !important;
-} */
+.modal ol > li {
+    counter-increment: item;
+    margin-bottom: 20px;
+}
+
+.modal ol > li:before {
+    content: counter(item) ".";
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+ul {
+    list-style-type: disclosure-closed;
+    margin-left: 20px;
+}
+
+li ul {
+    margin-top: 10px;
+}
+
+li ul li {
+    margin-bottom: 5px;
+}
+
+b {
+    font-weight: bold;
+}

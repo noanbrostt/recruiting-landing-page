@@ -5,15 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./src/images/favicon.jpg">
     <title>Plansul Recrutamento</title>
-    
-    <script src="./src/javascript/jquery-3.7.1.min.js"></script>
-    <script src="./src/javascript/jquery.mask-1.14.15.min.js"></script>
-    <script src="./src/javascript/fontawesome.min.js"></script>
-    <script src="./src/javascript/sweetalert2.min.js"></script>
-    <script src="./src/javascript/jquery.appear.js"></script>
-    <script src="./src/javascript/scrollreveal.js"></script>
 
-    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
     <header>
@@ -223,8 +217,8 @@
                             <span>
                                 <span>
                                     Eu concordo com os 
-                                    <a href="https://app.termly.io/document/terms-of-service/bdc0e7cf-cb88-4f24-9cb5-13761e20dedb" target="_blank" class="text-base text-center text-gray-400 underline">
-                                        Termos e Condições
+                                    <a href="https://www.plansul.com.br/politica-de-privacidade/" target="_blank">
+                                        Termos e Condições e a Política de Privacidade
                                     </a>
                                     .
                                 </span>
@@ -253,7 +247,7 @@
         </section>
         <section id="contratacao-continuacao">
             <h3 class="section-subtitle mt-80">
-                Você também pode trazer <span class="btn-documentos">esses documentos</span> pessoalmente, veja os horários disponíveis:
+                Você também pode trazer <a href="#" data-toggle="modal" data-target="#modal-documentos">esses documentos</a> pessoalmente, veja os horários disponíveis:
             </h3>
             <div id="calendario">
                 <img src="./src/images/calendario.png" alt="Calendario">
@@ -324,21 +318,196 @@
         </div>
     </footer>
 
-    <!-- Modal documentos -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Documentos</h2>
-            </div>
+
+    <!-- Modal dos termos e condições
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal-termos">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
             <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
-            </div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <h5><b>Termos e Condições</b></h5>
+
+                <p>Ao utilizar este site, você concorda com os seguintes termos e condições:</p>
+
+                <ol>
+                    <li>
+                        <b>Informações Pessoais:</b> Ao enviar suas informações pessoais através deste site, você concorda com a coleta e o processamento dessas informações pela Plansul para fins de recrutamento e contato futuro.
+                    </li>
+                    <li>
+                        <b>Uso Responsável:</b> Você concorda em utilizar este site de forma responsável e em conformidade com todas as leis e regulamentos aplicáveis.
+                    </li>
+                    <li>
+                        <b>Propriedade Intelectual:</b> Todo o conteúdo deste site, incluindo textos, imagens, logotipos e design, é de propriedade exclusiva da Plansul ou de seus licenciadores e está protegido por leis de direitos autorais e outras leis de propriedade intelectual.
+                    </li>
+                    <li>
+                        <b>Links para Sites de Terceiros:</b> Este site pode conter links para sites de terceiros. A Plansul não é responsável pelo conteúdo ou pelas práticas de privacidade desses sites.
+                    </li>
+                    <li>
+                        <b>Alterações nos Termos:</b> A Plansul reserva-se o direito de modificar estes termos e condições a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site.
+                    </li>
+                    <li>
+                        <b>Contato:</b> Se você tiver alguma dúvida ou preocupação sobre estes termos e condições, entre em contato conosco através dos detalhes fornecidos neste site.
+                    </li>
+                </ol>
+
+                <hr>
+
+                <h5><b>Política de Privacidade</b></h5>
+
+                <p>A sua privacidade é importante para nós. Esta política de privacidade descreve como a Plansul coleta, usa e protege as informações pessoais que você fornece através deste site.</p>
+
+                <ol>
+                    <li>
+                        <b>Informações Coletadas:</b> Podemos coletar informações pessoais, como nome e número de telefone, quando você envia um formulário de contato ou se candidata a uma vaga de emprego através deste site.
+                    </li>
+                    <li>
+                        <b>Uso das Informações:</b> Utilizamos as informações coletadas para fins de recrutamento e para entrar em contato com você sobre oportunidades de emprego na Plansul.
+                    </li>
+                    <li>
+                        <b>Compartilhamento de Informações:</b> Não compartilhamos suas informações pessoais com terceiros, exceto quando necessário para fins de recrutamento ou conforme exigido por lei.
+                    </li>
+                    <li>
+                        <b>Segurança das Informações:</b> Implementamos medidas de segurança para proteger suas informações pessoais contra acesso não autorizado ou divulgação.
+                    </li>
+                    <li>
+                        <b>Acesso e Atualização:</b> Se você deseja acessar ou atualizar suas informações pessoais, entre em contato conosco através dos detalhes fornecidos neste site.
+                    </li>
+                    <li>
+                        <b>Consentimento:</b> Ao enviar suas informações pessoais através deste site, você consente com a coleta, uso e processamento dessas informações de acordo com esta política de privacidade.
+                    </li>
+                    <li>
+                        <b>Alterações na Política:</b> Reservamo-nos o direito de modificar esta política de privacidade a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site.
+                    </li>
+                </ol>
+                
+                <p>Se tiver alguma dúvida sobre esta política de privacidade, entre em contato conosco através dos detalhes fornecidos neste site.</p>
+              </div>
+          </div>
+        </div>
+    </div> -->
+
+    <!-- Modal dos documentos-->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal-documentos">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Documentos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5>Será pedido uma cópia legível de todos os documentos, eles devem ser copiados separadamente. Favor entregar os documentos na ordem abaixo.</h5>
+                <ol>
+                    <li>
+                        <b>Carteira de Trabalho</b>
+                        <ul>
+                            <li>
+                                Se física, com Número do PIS, Número da Carteira de Trabalho, Série e Data de Emissão.
+                            </li>
+                            <li>
+                                Se digital (pode enviar no Whats: (41) 99143-0950), com Nome Completo, Data de Emissão e Número do PIS (deve entrar no site do "Meu INSS" com o GOV.BR).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Comprovante de Residência</b> (que seja dos últimos 3 meses)
+                        <ul>
+                            <li>
+                                <u>Em seu nome ou dos pais</u>, sendo: Conta de Luz/Água, Internet Residêncial, Telefone Fixo, Boleto ou Fatura de Cartão de Crédito, Plano de Celular Pós-Pago ou Ficha Cadastral do SUS (caso seja casado e a conta esteja no nome do(a) cônjuge, precisa da certidão de casamento).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Conta Bancária</b>
+                        <ul>
+                            <li>
+                                Aceitamos somente conta corrente e poupança em bancos físicos <u>no seu nome</u>, como: Banco do Brasil, Itaú(sem ser agência 0500), Santander, Bradesco, Caixa Econômica e Caixa Tem.
+                            </li>
+                            <li>Trazer uma cópia ou print legível dos dados bancários que apresente: Seu Nome, Número da Agência e Número da Conta (caso tire print ou foto do app do banco, envie ao Whats: (41) 99143-0950). </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>RG ou CNH</b> (a cópia precisa ser frente e verso)
+                    </li>
+                    <li>
+                        <b>CPF</b>
+                        <ul>
+                            <li>
+                                Apenas caso não conste no RG, e é possível emitir um comprovante do CPF no site da Receita Federal.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Título de Eleitor</b> (caso possua)
+                        <ul>
+                            <li>
+                                Se for digital, acessar o APP e-Título e enviar print no Whats: (41) 99143-0950.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Histórico Escolar</b> do Ensino Médio, Declaração de Conclusão ou Diploma da Faculdade Com o Carimbo e Assinatura.
+                    </li>
+                    <li>
+                        <u>Caso seja homem até 45 anos</u>, Certificado de Incorporação de <b>Dispensa Militar</b> Com O Número Do RA
+                    </li>
+                    <li>
+                        <u>Caso seja casado no civil</u>, <b>Certidão de casamento</b>
+                        <ul>
+                            <li>
+                                Se ocorreu alteração do nome depois de casado, o RG, a Carteira de Trabalho e o CPF devem apresentar o nome com a alteração.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Cartão Transporte</b> que utilizará, <u>em seu nome</u> 
+                        <ul>
+                            <li>
+                                Caso tenha o cartão em mãos, enviar uma foto legível para o Whats: (41) 99143-0950.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <u>Caso possua filhos menores de 14 anos:</u>
+                        <ul>
+                            <li>Certidão de Nascimento <u>- menores de 14 anos</u>.</li>
+                            <li>CPF, caso não conste na Certidão de Nascimento <u>- menores de 14 anos</u>.</li>
+                            <li>Carteira de Vacinação onde aparece o nome completo da criança e de todas as doses das vacinas que ela tomou <u>- menores de 7 anos</u>.</li>
+                            <li>Declaração de Frequência e Matrícula Escolar, que apareça carimbo e assinatura <u>- maiores de 7 anos</u>.</li>
+                            <li>Se tiver mais de um filho, trazer documentações de acordo com o nascimento.</li>
+                            <li>As cópias dos documentos do(s) seu(s) filho(s) devem estar separadas dos seus documentos</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Carteira De Vacinação Da Covid</b>
+                        <ul>
+                            <li>
+                                Onde aparece seu nome e as doses da vacina que tomou.
+                            </li>
+                            <li>
+                                Caso não tenha a carteirinha, baixe e acesse o APP MEU SUS DIGITAL, salva em PDF e manda no Whats: (41) 99143-0950.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+              </div>
+          </div>
         </div>
     </div>
+
+    
+    <script src="./src/javascript/jquery-3.7.1.min.js"></script>
+    <script src="./src/javascript/jquery.mask-1.14.15.min.js"></script>
+    <script src="./src/javascript/fontawesome.min.js"></script>
+    <script src="./src/javascript/sweetalert2.min.js"></script>
+    <script src="./src/javascript/jquery.appear.js"></script>
+    <script src="./src/javascript/bootstrap.min.js"></script>
+    <script src="./src/javascript/scrollreveal.js"></script>
+    <script src="./src/javascript/popper.min.js"></script>
   
-    <script src="src/javascript/script.js"></script>
+    <script src="./src/javascript/script.js"></script>
 </body>
 </html>

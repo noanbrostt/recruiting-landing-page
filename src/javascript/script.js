@@ -168,52 +168,32 @@ $(document).ready(function() {
             return;
         }
 
-        var nome = $('#input_nome').val().trim();
+        var nome = $('#input_nome').val().trim().replace(/[^a-z ]/gi,'');
         if (nome.length == 0) {
             triggerSweetAlert('warning', 'Informe seu Nome Completo');
             return;
         }
 
-        var telefone = $('#input_whats').val().trim();
+        var telefone = $('#input_whats').val().trim().replace(/[^0-9]/gi, '');
         if (telefone.length == 0) {
             triggerSweetAlert('warning', 'Informe seu Whatsapp');
             return;
-
-        } else if (telefone.length < 14) {
+        } else if (telefone.length < 10) {
             triggerSweetAlert('warning', 'Informe um Whatsapp válido');
             return;
         }
 
         // Caso todos os campos sejam validados
+        $('#check1-61').prop('checked', false);
+        $('#input_nome').val('');
+        $('#input_whats').val('');
 
+        console.log("success");
         Swal.fire({
             title: "Obrigado!",
             text: "Mandaremos mensagem assim que possível!",
             icon: "success"
         });
-
-        $('#check1-61').prop('checked', false);
-        $('#input_nome').val('');
-        $('#input_whats').val('');
-
-        // var link = "https://servicodados.ibge.gov.br/api/v1/pesquisas/" + valor1;
-        // $.ajax({
-        //     url: link,
-        //     type: 'GET',
-        //     dataType: 'json',
-
-        //     })
-        //     .done(function() {
-        //         console.log("success");
-        //         console.log(valor1);
-        //         document.getElementById("demo").innerHTML = valor1;
-        //     })
-        //     .fail(function() {
-        //         console.log("error");
-        //     })
-        //     .always(function() {
-        //         console.log("complete");
-        //     });
     })
 
     function triggerSweetAlert(icon, title) {
@@ -228,10 +208,6 @@ $(document).ready(function() {
             timer: 2000
         });
     }
-
-    $('.btn-documentos').on('click', function() {
-
-    })
 
     const dataAtual = new Date();
     const anoAtual = dataAtual.getFullYear();

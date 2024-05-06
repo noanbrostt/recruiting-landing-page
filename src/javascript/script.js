@@ -188,11 +188,10 @@ $(document).ready(function() {
         $('#input_nome').val('');
         $('#input_whats').val('');
 
-        console.log("success");
         Swal.fire({
-            title: "Obrigado!",
-            text: "Mandaremos mensagem assim que possível!",
-            icon: "success"
+                title: "Obrigado!",
+                text: "Mandaremos mensagem assim que possí­vel!",
+                icon: "success"
         });
     })
 

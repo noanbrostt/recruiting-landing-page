@@ -10,7 +10,7 @@ $(document).ready(function() {
     };
 
     $('#input_nome').keyup(function () { 
-        this.value = this.value.replace(/[^a-zA-Z ]/g,'');
+        this.value = this.value.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ ]/g,'');
     });
     $('#input_whats').mask(SPMaskBehavior, spOptions);
 
@@ -37,12 +37,6 @@ $(document).ready(function() {
         }, 300);
     });
     // Fim menu responsivo
-
-    // Check requisito
-    $('.toggle').on('click', function() {
-        $(this).toggleClass('active');
-        $(this).parent().find('i').toggleClass('color-p5');
-    })
 
     const sections = $('section');
     const navItems = $('.nav-item');
@@ -92,10 +86,17 @@ $(document).ready(function() {
         distance: '20%'
     });
 
-    $('.card').appear(function() {
+    // Check requisito
+    $('.card').on('click', function() {
+        $(this).find('.toggle').toggleClass('active');
+        $(this).find('.toggle').parent().find('i').toggleClass('color-p5');
+    })
+
+    $('.card').one('mouseover', function() {
         setTimeout(() => {
-            $(this).find('.toggle').click();
-        }, 1200);
+            $(this).find('.toggle').addClass('active');
+            $(this).find('.toggle').parent().find('i').addClass('color-p5');
+        }, 600);
     });
 
     ScrollReveal().reveal('#contratacao-img', {
@@ -129,10 +130,10 @@ $(document).ready(function() {
         const horaAtual = agora.getHours();
     
         // Verifique se hoje é um dia entre segunda-feira (1) e domingo (0)
-        const estaNoPeriodoDias = diaDaSemana >= 1 && diaDaSemana <= 6;
+        const estaNoPeriodoDias = diaDaSemana >= 1 && diaDaSemana <= 5;
     
         // Verifique se a hora atual está entre 8h e 18h
-        const estaNoPeriodoHoras = horaAtual >= 8 && horaAtual <= 17;
+        const estaNoPeriodoHoras = horaAtual >= 8 && horaAtual <= 16;
     
         if (estaNoPeriodoDias && estaNoPeriodoHoras) {
             $('.aberto').show();
@@ -168,7 +169,7 @@ $(document).ready(function() {
             return;
         }
 
-        var nome = $('#input_nome').val().trim().replace(/[^a-z ]/gi,'');
+        var nome = $('#input_nome').val().trim().replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ ]/gi,'');
         if (nome.length == 0) {
             triggerSweetAlert('warning', 'Informe seu Nome Completo');
             return;
@@ -184,15 +185,35 @@ $(document).ready(function() {
         }
 
         // Caso todos os campos sejam validados
-        $('#check1-61').prop('checked', false);
-        $('#input_nome').val('');
-        $('#input_whats').val('');
+        $.ajax({
+            url: '../site-plansul-api/index.php?nome='+nome+'&telefone='+telefone,
+            type: 'POST',
+            dataType: 'json',
 
-        Swal.fire({
-                title: "Obrigado!",
-                text: "Mandaremos mensagem assim que possí­vel!",
-                icon: "success"
-        });
+            })
+            .done(function() {
+                
+            })
+            .fail(function(err) {
+
+            })
+            .always(function(result) {
+                console.log(result);
+                if (result == "Registro inserido com sucesso!") {
+                    Swal.fire({
+                            title: "Obrigado!",
+                            text: "Você foi pré selecionado, pode comparecer no endereço Estr. Da Ribeira - Br-476, 3001 - Guarani, Colombo - PR, 83408-460.",
+                            icon: "success"
+                    }).then(() => {
+                        window.open('https://wa.me//5541991430950?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
+                    });
+
+                    $('#check1-61').prop('checked', false);
+                    $('#input_nome').val('');
+                    $('#input_whats').val('');
+                }
+            });
+
     })
 
     function triggerSweetAlert(icon, title) {

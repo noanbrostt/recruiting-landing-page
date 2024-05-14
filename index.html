@@ -85,7 +85,7 @@
 
             <div id="sobre-content">
                 <div id="sobre-left">
-                    <img src="./src/images/plansul.jpg" alt="Prédio da Plansul Colombo">
+                    <img src="./src/images/plansul-colombo.jpg" alt="Prédio da Plansul">
                 </div>
                 <div id="sobre-right">
                     <p>
@@ -205,7 +205,7 @@
                     Candidatura
                 </h2>
                 <h3 class="section-subtitle">
-                    Deixe seus dados que entraremos em contato!
+                    Preencha abaixo, escolhendo a cidade de preferência!
                 </h3>
 
                 <div class="form">
@@ -221,13 +221,25 @@
                             <span>
                                 <span>
                                     Eu concordo com os 
-                                    <a href="./src/images/LGPD_-_SITE_COLOMBO.pdf" target="_blank">
+                                    <a href="./src/images/termos.pdf" target="_blank">
                                         Termos e Condições e a Política de Privacidade
                                     </a>
                                     .
                                 </span>
                             </span>
                         </label>
+                    </div>
+
+                    <div class="radio-input">
+                        <label>
+                            <input value="colombo" name="site-value" id="site-colombo" type="radio" checked="">
+                            <span>Colombo</span>
+                        </label>
+                        <label>
+                            <input value="curitiba" name="site-value" id="site-curitiba" type="radio">
+                            <span>Curitiba</span>
+                        </label>
+                        <span class="selection"></span>
                     </div>
                       
                     <div class="divInputs">
@@ -243,7 +255,7 @@
                 </div>
 
                 <button class="btn-default" id="btn-contratacao">
-                    Enviar meus dados
+                    Concluir
                 </button>
 
             </div>
@@ -260,7 +272,7 @@
 
         <section id="contato">
 
-            <h2 class="section-title">Fale Conosco</h2>
+            <h2 class="section-title">Plansul Colombo</h2>
 
             <div class="informacoes">
                 <div class="informacoesLeft">
@@ -304,8 +316,13 @@
                 </div>
             </div>
 
-            <div class="map">
+            <div class="map map-colombo">
                 <iframe src="https://maps.google.com/maps?q=Plansul+-+Planejamento+e+Consultoria+COLOMBO&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no">
+                </iframe>
+            </div>
+
+            <div class="map map-curitiba" style="display: none;">
+                <iframe src="https://maps.google.com/maps?q=Plansul+-+Planejamento+e+Consultoria+CURITIBA&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no">
                 </iframe>
             </div>
 
@@ -321,76 +338,6 @@
             </span>
         </div>
     </footer>
-
-
-    <!-- Modal dos termos e condições
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal-termos">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                <h5><b>Termos e Condições</b></h5>
-
-                <p>Ao utilizar este site, você concorda com os seguintes termos e condições:</p>
-
-                <ol>
-                    <li>
-                        <b>Informações Pessoais:</b> Ao enviar suas informações pessoais através deste site, você concorda com a coleta e o processamento dessas informações pela Plansul para fins de recrutamento e contato futuro.
-                    </li>
-                    <li>
-                        <b>Uso Responsável:</b> Você concorda em utilizar este site de forma responsável e em conformidade com todas as leis e regulamentos aplicáveis.
-                    </li>
-                    <li>
-                        <b>Propriedade Intelectual:</b> Todo o conteúdo deste site, incluindo textos, imagens, logotipos e design, é de propriedade exclusiva da Plansul ou de seus licenciadores e está protegido por leis de direitos autorais e outras leis de propriedade intelectual.
-                    </li>
-                    <li>
-                        <b>Links para Sites de Terceiros:</b> Este site pode conter links para sites de terceiros. A Plansul não é responsável pelo conteúdo ou pelas práticas de privacidade desses sites.
-                    </li>
-                    <li>
-                        <b>Alterações nos Termos:</b> A Plansul reserva-se o direito de modificar estes termos e condições a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site.
-                    </li>
-                    <li>
-                        <b>Contato:</b> Se você tiver alguma dúvida ou preocupação sobre estes termos e condições, entre em contato conosco através dos detalhes fornecidos neste site.
-                    </li>
-                </ol>
-
-                <hr>
-
-                <h5><b>Política de Privacidade</b></h5>
-
-                <p>A sua privacidade é importante para nós. Esta política de privacidade descreve como a Plansul coleta, usa e protege as informações pessoais que você fornece através deste site.</p>
-
-                <ol>
-                    <li>
-                        <b>Informações Coletadas:</b> Podemos coletar informações pessoais, como nome e número de telefone, quando você envia um formulário de contato ou se candidata a uma vaga de emprego através deste site.
-                    </li>
-                    <li>
-                        <b>Uso das Informações:</b> Utilizamos as informações coletadas para fins de recrutamento e para entrar em contato com você sobre oportunidades de emprego na Plansul.
-                    </li>
-                    <li>
-                        <b>Compartilhamento de Informações:</b> Não compartilhamos suas informações pessoais com terceiros, exceto quando necessário para fins de recrutamento ou conforme exigido por lei.
-                    </li>
-                    <li>
-                        <b>Segurança das Informações:</b> Implementamos medidas de segurança para proteger suas informações pessoais contra acesso não autorizado ou divulgação.
-                    </li>
-                    <li>
-                        <b>Acesso e Atualização:</b> Se você deseja acessar ou atualizar suas informações pessoais, entre em contato conosco através dos detalhes fornecidos neste site.
-                    </li>
-                    <li>
-                        <b>Consentimento:</b> Ao enviar suas informações pessoais através deste site, você consente com a coleta, uso e processamento dessas informações de acordo com esta política de privacidade.
-                    </li>
-                    <li>
-                        <b>Alterações na Política:</b> Reservamo-nos o direito de modificar esta política de privacidade a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site.
-                    </li>
-                </ol>
-                
-                <p>Se tiver alguma dúvida sobre esta política de privacidade, entre em contato conosco através dos detalhes fornecidos neste site.</p>
-              </div>
-          </div>
-        </div>
-    </div> -->
 
     <!-- Modal dos documentos-->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal-documentos">
@@ -508,6 +455,7 @@
     <script src="./src/javascript/fontawesome.min.js"></script>
     <script src="./src/javascript/sweetalert2.min.js"></script>
     <script src="./src/javascript/bootstrap.min.js"></script>
+    <script src="./src/javascript/jquery.appear.js"></script>
     <script src="./src/javascript/scrollreveal.js"></script>
     <script src="./src/javascript/popper.min.js"></script>
   

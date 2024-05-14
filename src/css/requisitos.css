@@ -38,10 +38,9 @@
         box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
-        
+        cursor: pointer;
 
         .toggle {
-            cursor: pointer;
             background: var(--color-neutral-1_25);
             transition: 400ms;
             box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);

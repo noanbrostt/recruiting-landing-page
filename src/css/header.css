@@ -73,6 +73,7 @@ header {
     position: absolute;
     top: var(--topbar-height);
     left: 100vw;
+    margin: 0;
 
     a {
         transition: 300ms;

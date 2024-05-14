@@ -92,32 +92,30 @@ $(document).ready(function() {
         $(this).find('.toggle').parent().find('i').toggleClass('color-p5');
     })
 
-    $('.card').one('mouseover', function() {
-        setTimeout(() => {
-            $(this).find('.toggle').addClass('active');
-            $(this).find('.toggle').parent().find('i').addClass('color-p5');
-        }, 600);
-    });
+
+
+    function deviceType() {
+        const ua = navigator.userAgent;
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua) || /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)){
+            $('.card').appear(function() {
+                setTimeout(() => {
+                    $(this).find('.toggle').addClass('active');
+                    $(this).find('.toggle').parent().find('i').addClass('color-p5');
+                }, 800);
+            });
+        } else {
+            $('.card').one('mouseover', function() {
+                setTimeout(() => {
+                    $(this).find('.toggle').addClass('active');
+                    $(this).find('.toggle').parent().find('i').addClass('color-p5');
+                }, 600);
+            });
+            return "desktop";
+        }
+    };
+    deviceType();
 
     ScrollReveal().reveal('#contratacao-img', {
-        origin: 'left',
-        duration: 1000,
-        distance: '20%'
-    });
-    
-    ScrollReveal().reveal('.informacoesLeft', {
-        origin: 'left',
-        duration: 1000,
-        distance: '20%'
-    });
-
-    ScrollReveal().reveal('.informacoesRight', {
-        origin: 'left',
-        duration: 1000,
-        distance: '20%'
-    });
-
-    ScrollReveal().reveal('.feedback', {
         origin: 'left',
         duration: 1000,
         distance: '20%'
@@ -161,6 +159,31 @@ $(document).ready(function() {
         }, 1);
     })
 
+    $('input[name="site-value"]').on('change', function() {
+        if ($('input[name="site-value"]:checked').val() == 'colombo') {
+            // $('#sobre-left img').attr('src', './src/images/plansul-colombo.jpg');
+            $('#contato h2').html('Plansul Colombo');
+            $('.informacoesRight .telefone p').html('(41) 3087-2560');
+            $('.informacoesRight .whats p').html('(41) 99143-0950');
+            $('.informacoesRight .whats a').attr('href', 'https://wa.me//5541991430950?text=Olá, estou entrando em contato por conta da vaga de emprego.');
+            $('.informacoesRight .endereco p').html('Estr. Da Ribeira - Br-476, 3001 - Guarani, Colombo - PR, 83408-460');
+            $('#contato .map').hide();
+            $('#contato .map.map-colombo').show();
+            $('#contratacao-continuacao').show();
+
+        } else if ($('input[name="site-value"]:checked').val() == 'curitiba') {
+            // $('#sobre-left img').attr('src', './src/images/plansul-curitiba.webp');
+            $('#contato h2').html('Plansul Curitiba');
+            $('.informacoesRight .telefone p').html('(41) 3087-2542');
+            $('.informacoesRight .whats p').html('(41) 3097-2545');
+            $('.informacoesRight .whats a').attr('href', 'https://wa.me//554130972545?text=Olá, estou entrando em contato por conta da vaga de emprego.');
+            $('.informacoesRight .endereco p').html('R. Francisco Derosso, 108 - Xaxim, Curitiba - PR, 81710-000');
+            $('#contato .map').hide();
+            $('#contato .map.map-curitiba').show();
+            $('#contratacao-continuacao').hide();
+        }
+    })
+
     // Checando se o usuário preencheu todas as informações
     $('#btn-contratacao').on('click', function() {
         // Validação inputs
@@ -184,9 +207,18 @@ $(document).ready(function() {
             return;
         }
 
+
+        var contrato = $('input[name="site-value"]:checked').val();
+        if (contrato == 'colombo') {
+            contrato = 1;
+
+        } else if (contrato == 'curitiba') {
+            contrato = 2;
+        }
+
         // Caso todos os campos sejam validados
         $.ajax({
-            url: '../site-plansul-api/index.php?nome='+nome+'&telefone='+telefone,
+            url: '../site-plansul-api/index.php?nome='+nome+'&telefone='+telefone+'&contrato='+contrato+'&origem=1',
             type: 'POST',
             dataType: 'json',
 
@@ -194,7 +226,7 @@ $(document).ready(function() {
             .done(function() {
                 
             })
-            .fail(function(err) {
+            .fail(function() {
 
             })
             .always(function(result) {
@@ -202,10 +234,15 @@ $(document).ready(function() {
                 if (result == "Registro inserido com sucesso!") {
                     Swal.fire({
                             title: "Obrigado!",
-                            text: "Você foi pré selecionado, pode comparecer no endereço Estr. Da Ribeira - Br-476, 3001 - Guarani, Colombo - PR, 83408-460.",
+                            text: "Você foi pré selecionado, pode comparecer no endereço "+$('.informacoesRight .endereco p').html(),
                             icon: "success"
                     }).then(() => {
-                        window.open('https://wa.me//5541991430950?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
+                        if ($('input[name="site-value"]:checked').val() == 'colombo') {
+                            window.open('https://wa.me//5541991430950?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
+                
+                        } else if ($('input[name="site-value"]:checked').val() == 'curitiba') {
+                            window.open('https://wa.me//554130972545?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
+                        }
                     });
 
                     $('#check1-61').prop('checked', false);

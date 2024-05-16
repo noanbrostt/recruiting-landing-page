@@ -175,8 +175,8 @@ $(document).ready(function() {
             // $('#sobre-left img').attr('src', './src/images/plansul-curitiba.webp');
             $('#contato h2').html('Plansul Curitiba');
             $('.informacoesRight .telefone p').html('(41) 3087-2542');
-            $('.informacoesRight .whats p').html('(41) 3097-2545');
-            $('.informacoesRight .whats a').attr('href', 'https://wa.me//554130972545?text=Olá, estou entrando em contato por conta da vaga de emprego.');
+            $('.informacoesRight .whats p').html('(41) 3087-2545');
+            $('.informacoesRight .whats a').attr('href', 'https://wa.me//554130872545?text=Olá, estou entrando em contato por conta da vaga de emprego.');
             $('.informacoesRight .endereco p').html('R. Francisco Derosso, 108 - Xaxim, Curitiba - PR, 81710-000');
             $('#contato .map').hide();
             $('#contato .map.map-curitiba').show();
@@ -226,11 +226,11 @@ $(document).ready(function() {
             .done(function() {
                 
             })
-            .fail(function() {
-
+            .fail(function(result) {
+                console.log(result);
             })
             .always(function(result) {
-                console.log(result);
+
                 if (result == "Registro inserido com sucesso!") {
                     Swal.fire({
                             title: "Obrigado!",
@@ -241,7 +241,7 @@ $(document).ready(function() {
                             window.open('https://wa.me//5541991430950?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
                 
                         } else if ($('input[name="site-value"]:checked').val() == 'curitiba') {
-                            window.open('https://wa.me//554130972545?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
+                            window.open('https://wa.me//554130872545?text=Olá, estou entrando em contato por conta da vaga de emprego, meu nome é '+nome+'.');
                         }
                     });
 
